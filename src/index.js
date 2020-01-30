@@ -1,10 +1,10 @@
 require('dotenv').config()
-
+require('./db/database')
 const app = require('./app')
 
-const Main = async app => (
-  await app.listen(app.get('port')),
+const Main = async app => {
+  await app.listen(app.get('port'))
   console.log(`Server running in http://localhost:${app.get('port')}`)
-)
+}
 
-Main(app);
+Main(app)
